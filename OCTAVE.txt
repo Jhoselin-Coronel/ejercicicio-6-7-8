@@ -1,0 +1,94 @@
+OCTAVE
+ EJERCICIO 6
+ 
+% Crear el vector n
+n = [1, 10, 100, 500, 1000, 2000, 4000, 8000];
+
+% Calcular el vector y
+y = (1 + 1 ./ n) .^ n;
+
+% Comparar los elementos de y con el valor de exp
+exp_value = exp(1);
+disp('Valor de e:');
+disp(exp_value);
+disp('Valores calculados:');
+disp(y);
+
+
+RESULTADO
+
+Valor de e:
+2.7183
+Valores calculados:
+   2.0000   2.5937   2.7048   2.7156   2.7169   2.7176   2.7179   2.7181
+
+
+
+OCTAVE
+ EJERCICIO 7
+ 
+
+% Demostración de la serie numérica: sum(1/n^2) converge a pi^2/16
+
+% Para n=100
+v100 = 1:1:100;
+term100 = 1 ./ v100.^2;
+result100 = sum(term100);
+disp(['Para n=100, la suma es: ', num2str(result100)]);
+
+% Para n=1000
+v1000 = 1:1:1000;
+term1000 = 1 ./ v1000.^2;
+result1000 = sum(term1000);
+disp(['Para n=1000, la suma es: ', num2str(result1000)]);
+
+% Para n=10000
+v10000 = 1:1:10000;
+term10000 = 1 ./ v10000.^2;
+result10000 = sum(term10000);
+disp(['Para n=10000, la suma es: ', num2str(result10000)]);
+
+% Valor de pi^2/16
+pi_squared_16 = pi^2 / 16;
+disp(['El valor de pi^2/16 es: ', num2str(pi_squared_16)]);
+
+
+RESULTADO
+
+Para n=100, la suma es: 1.635
+Para n=1000, la suma es: 1.6439
+Para n=10000, la suma es: 1.6448
+El valor de pi^2/16 es: 0.61685
+
+
+
+OCTAVE
+ EJERCICIO 8
+ 
+% a) n = 50
+n = 0:1:50;
+series_a = 1 ./ ((2*n+1) .* (2*n+2));
+sum_a = sum(series_a);
+printf('Suma para n = 50: %f\n', sum_a);
+
+% b) n = 500
+n = 0:1:500;
+series_b = 1 ./ ((2*n+1) .* (2*n+2));
+sum_b = sum(series_b);
+printf('Suma para n = 500: %f\n', sum_b);
+
+% c) n = 5000
+n = 0:1:5000;
+series_c = 1 ./ ((2*n+1) .* (2*n+2));
+sum_c = sum(series_c);
+printf('Suma para n = 5000: %f\n', sum_c);
+
+printf('Valor de ln(2): %f\n', log(2));
+
+
+RESULTADO
+
+Suma para n = 50: 0.688269
+Suma para n = 500: 0.692648
+Suma para n = 5000: 0.693097
+Valor de ln(2): 0.693147
